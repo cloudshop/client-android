@@ -171,6 +171,16 @@ android {
       abortOnError false;
     }
 
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'LICENSE.txt'
+        exclude 'META-INF/ASL2.0'
+    }
+
     compileSdkVersion cdvCompileSdkVersion
     buildToolsVersion cdvBuildToolsVersion
 
@@ -260,6 +270,16 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     // SUB-PROJECT DEPENDENCIES END
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile (project(path: ':swaggerapi')) {
+        exclude group: 'org.apache.oltu.oauth2', module: 'org.apache.oltu.oauth2.common'
+    }
+    compile (project(path: ':appframe'))
+    testCompile 'junit:junit:4.12'
 }
 
 def promptForReleaseKeyPassword() {

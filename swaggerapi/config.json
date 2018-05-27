@@ -1,0 +1,8 @@
+{
+  "library": "retrofit2",
+  "groupId":"com.newdun.client.android",
+  "artifactId": "swagger-api-retrofit2-rx",
+  "artifactVersion":"0.0.1",
+  "useRxJava": false,
+  "hideGenerationTimestamp": true
+}
