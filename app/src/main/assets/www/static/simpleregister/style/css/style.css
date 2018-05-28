@@ -1,0 +1,75 @@
+body {
+    width: 100%;
+    height: 100%;
+    background: #f5f5f5;
+}
+
+.main {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: .14rem;
+    background: #fff;
+    text-align: center;
+    padding-bottom: 1rem
+}
+
+.main p {
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+    /* margin-top: .2rem */
+}
+
+.main input {
+    width: 100%;
+    height: .3rem;
+    border: none;
+    border-bottom: .01rem solid #ccc
+}
+
+.second {
+    position: relative;
+}
+
+.second input {
+    top: .15rem
+}
+
+.second input[type="text"] {
+    width: 55%;
+    position: absolute;
+    left: 0;
+}
+
+.get {
+    width: 40%;
+    border: none;
+    height: .35rem;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    border-radius: .1rem;
+    background: #ff0103;
+    color: #fff;
+    top: .1rem;
+}
+
+.sure {
+    width: 70%;
+    height: .4rem;
+    line-height: .4rem;
+    text-align: center;
+    background: #ff0103;
+    color: #fff;
+    border: none;
+    border-radius: .1rem;
+    padding-top: -.2rem;
+}
+
+.sure {
+    position: absolute;
+    left: 15%;
+    margin-top: .3rem
+}
+
+.get {}

@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.newdun.assist.config.Config;
 import com.newdun.assist.dummy.DummyContent;
+import com.newdun.assist.fragments.ClassifyFragment;
 import com.newdun.assist.fragments.ContactFragment;
 
 import java.util.HashMap;
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
 
     public void onSetTab () {
         addTab(R.string.tab_dynamic, R.drawable.tab_home, HomePageFragment.class);
-        addTab(R.string.tab_message, R.drawable.tab_message, ContactFragment.class);
+        addTab(R.string.tab_message, R.drawable.tab_message, ClassifyFragment.class);
         addTab(R.string.tab_contact, R.drawable.tab_contact, ContactFragment.class);
         addTab(R.string.tab_discover, R.drawable.tab_discover, ContactFragment.class);
         addTab(R.string.tab_personal, R.drawable.tab_person, ContactFragment.class);

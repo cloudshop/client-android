@@ -1,0 +1,19 @@
+<html>
+
+<head>
+  <script>
+    localStorage.setItem('token', 'test token')
+
+    function loadToken() {
+      token = localStorage.getItem('token');
+      return token;
+    }
+
+    function saveToken(tokenJson) {
+        localStorage.setItem('token', tokenJson);
+    }
+
+  </script>
+</head>
+
+</html>
