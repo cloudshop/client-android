@@ -2,3 +2,6 @@
 include ":"
 include ":CordovaLib"
 include ":app"
+include ":appframe"
+include ":utils"
+include ":swaggerapi"

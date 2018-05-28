@@ -20,6 +20,7 @@ import com.newdun.assist.fragments.ContactFragment;
 import java.util.HashMap;
 import java.util.Map;
 import com.grjf365.gongrongpoints.R;
+import com.newdun.assist.fragments.HomePageFragment;
 
 public class MainActivity extends AppCompatActivity implements ContactFragment.OnListFragmentInteractionListener {
 
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
     }
 
     public void onSetTab () {
-        addTab(R.string.tab_dynamic, R.drawable.tab_home, ContactFragment.class);
+        addTab(R.string.tab_dynamic, R.drawable.tab_home, HomePageFragment.class);
         addTab(R.string.tab_message, R.drawable.tab_message, ContactFragment.class);
         addTab(R.string.tab_contact, R.drawable.tab_contact, ContactFragment.class);
         addTab(R.string.tab_discover, R.drawable.tab_discover, ContactFragment.class);

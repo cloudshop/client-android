@@ -44,7 +44,7 @@ public class MainActivity extends FragmentActivity
 
         currentFragment = new CordovaFragment();
         FragmentTransaction ft = getFragmentManager().beginTransaction();
-        ft.add(android.R.id.content, currentFragment);
+//        ft.add(android.R.id.content, currentFragment);
         ft.commit();
     }
 }

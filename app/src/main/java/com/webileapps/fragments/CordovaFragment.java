@@ -26,7 +26,6 @@ import android.graphics.Color;
 import android.media.AudioManager;
 import android.net.http.SslError;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -89,7 +88,7 @@ import java.util.Locale;
  * deprecated in favor of the config.xml file.
  *
  */
-public class CordovaFragment extends Fragment {
+public class CordovaFragment extends android.support.v4.app.Fragment {
     
     public static String TAG = "CordovaFragment";
 
