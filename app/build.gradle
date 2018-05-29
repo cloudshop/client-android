@@ -253,6 +253,13 @@ android {
                 signingConfig signingConfigs.release
             }
         }
+	
+	sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
+        }
+
         addSigningProps(cdvReleaseSigningPropertiesFile, signingConfigs.release)
     }
     if (cdvDebugSigningPropertiesFile) {
@@ -283,6 +290,25 @@ dependencies {
         exclude group: 'org.apache.oltu.oauth2', module: 'org.apache.oltu.oauth2.common'
     }
     compile (project(path: ':appframe'))
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
+    compile 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.github.bumptech.glide:glide:3.8.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.android.support:design:26.+'
+    compile 'com.ashokvarma.android:bottom-navigation-bar:2.0.4'
+    //logger
+    compile 'com.orhanobut:logger:2.1.1'
+    compile project(path: ':qrcode')
+    compile files('libs/alipaySdk-20180316.jar')
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+    compile files('libs/AMapSearch_6.1.0_AMapLocation_3.8.0_20180330.jar')
+    compile files('libs/jcore-android-1.2.0.jar')
+    compile files('libs/jpush-android-3.1.1.jar')
+    compile files('libs/jshare-android-1.5.0.jar')
+    compile files('libs/jshare-wechat-android-1.5.0.jar')
+    compile files('libs/xUtils-2.6.14.jar')
     testCompile 'junit:junit:4.12'
 }
 

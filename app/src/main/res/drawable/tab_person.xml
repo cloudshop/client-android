@@ -6,8 +6,8 @@
 	<!--<item android:drawable="@drawable/ic_my" />-->
 <!--</selector> -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:state_selected="true" android:drawable="@mipmap/tab_person_sel"></item>
-    <item android:state_pressed="true" android:drawable="@mipmap/tab_person_sel"></item>
-    <item android:state_focused="true" android:drawable="@mipmap/tab_person_sel"></item>
-    <item android:drawable="@mipmap/tab_person_unsel" />
+    <item android:state_selected="true" android:drawable="@mipmap/main_tab_my_yes"></item>
+    <item android:state_pressed="true" android:drawable="@mipmap/main_tab_my_yes"></item>
+    <item android:state_focused="true" android:drawable="@mipmap/main_tab_my_yes"></item>
+    <item android:drawable="@mipmap/main_tab_my_no" />
 </selector>

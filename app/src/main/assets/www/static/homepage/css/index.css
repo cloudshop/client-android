@@ -1,6 +1,6 @@
 body{
 	background: #f5f5f5;
-	font-size: 0.28rem;
+	/*font-size: 0.28rem;*/
 }
 html{
 	-webkit-text-size-adjust:none;
@@ -110,7 +110,8 @@ html{
 	color: #fff;
 }
 .loaction{
-	font-size:0.14rem;
+	display: inline-block;
+	font-size:0.24rem;
 	color: #fff;
 	width: 1.33rem;
 	height: .6rem;

@@ -39,12 +39,12 @@
 
             <!--头部定位 start-->
             <div class="header flex spaceBetween">
-                <a href="http://app.grjf365.com/#/city" class="loaction">北京市
+                <a href="javascript:;" class="loaction">北京市
                     <img class="arrowRight" src="images/city@2x.png" />
                 </a>
                 <input type="hidden" value="116.66847" id="langitude" />
                 <input type="hidden" value="39.88372" id="lantitude" />
-                <a href="http://app.grjf365.com/#/search" class="searchBox flex1">
+                <a href="JavaScript:;" class="searchBox flex1">
                     <img class="headSearch" src="images/seek@2x.png" />
                     <span>请输入关键字</span>
                 </a>
@@ -306,7 +306,38 @@
                 window.androidObject.JSCallAndroid(JSON.stringify(val));
             }
         })
-
+        $('.searchBox').click(function(){
+            var val = {
+                func: "openURL",
+                param: {
+                    URL: "/#/search"
+                }
+            };
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+            if (isiOS) {
+                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+            } else if (isAndroid) {
+                window.androidObject.JSCallAndroid(JSON.stringify(val));
+            }
+        })
+        $('.loaction').click(function(){
+            var val = {
+                func: "openURL",
+                param: {
+                    URL: "/#/city"
+                }
+            };
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+            if (isiOS) {
+                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+            } else if (isAndroid) {
+                window.androidObject.JSCallAndroid(JSON.stringify(val));
+            }
+        })
     </script>
     <script>
         function GeographicalLocation(X, Y, Z) {

@@ -71,10 +71,10 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
     }
 
     public void onSetTab () {
-        addTab(R.string.tab_dynamic, R.drawable.tab_home, HomePageFragment.class);
-        addTab(R.string.tab_message, R.drawable.tab_message, ClassifyFragment.class);
-        addTab(R.string.tab_contact, R.drawable.tab_contact, ContactFragment.class);
-        addTab(R.string.tab_discover, R.drawable.tab_discover, ShoppingCartFragment.class);
+        addTab(R.string.tab_home, R.drawable.tab_home, HomePageFragment.class);
+        addTab(R.string.tab_classify, R.drawable.tab_classify, ClassifyFragment.class);
+        addTab(0, R.drawable.tab_discover, ContactFragment.class);
+        addTab(R.string.tab_shoppingcart, R.drawable.tab_shoppingcart, ShoppingCartFragment.class);
         addTab(R.string.tab_personal, R.drawable.tab_person, MineFragment.class);
     }
 
@@ -163,7 +163,12 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
         @Override
         public CharSequence getPageTitle(int position) {
             Holder hodler = mHolders.get(position);
-            return getString(hodler.mTitle);
+            if (hodler.mTitle != 0) {
+                return getString(hodler.mTitle);
+            }
+            else {
+                return "";
+            }
         }
 
         public void addTab(int labelId, int drawableId, Class<?> c) {

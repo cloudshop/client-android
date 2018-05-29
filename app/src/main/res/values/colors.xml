@@ -5,4 +5,10 @@
     <color name="colorAccent">#FF4081</color>
     <color name="tab_bgcolor">@android:color/white</color>
     <color name="tab_text_color">@android:color/black</color>
+    <color name="white">#FFFFFF</color><!--白色 -->
+    <color name="black">#000000</color><!--黑色 -->
+    <color name="red">#FF0000</color><!--红色 -->
+    <color name="home_text_normal">#580067</color><!--红色 -->
+    <color name="home_text_selected">#FF0103</color><!--红色 -->
+    <color name="gray_line_color">#ececec</color>
 </resources>
