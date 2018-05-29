@@ -22,6 +22,8 @@ import java.util.HashMap;
 import java.util.Map;
 import com.grjf365.gongrongpoints.R;
 import com.newdun.assist.fragments.HomePageFragment;
+import com.newdun.assist.fragments.MineFragment;
+import com.newdun.assist.fragments.ShoppingCartFragment;
 
 public class MainActivity extends AppCompatActivity implements ContactFragment.OnListFragmentInteractionListener {
 
@@ -72,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements ContactFragment.O
         addTab(R.string.tab_dynamic, R.drawable.tab_home, HomePageFragment.class);
         addTab(R.string.tab_message, R.drawable.tab_message, ClassifyFragment.class);
         addTab(R.string.tab_contact, R.drawable.tab_contact, ContactFragment.class);
-        addTab(R.string.tab_discover, R.drawable.tab_discover, ContactFragment.class);
-        addTab(R.string.tab_personal, R.drawable.tab_person, ContactFragment.class);
+        addTab(R.string.tab_discover, R.drawable.tab_discover, ShoppingCartFragment.class);
+        addTab(R.string.tab_personal, R.drawable.tab_person, MineFragment.class);
     }
 
     @Override
