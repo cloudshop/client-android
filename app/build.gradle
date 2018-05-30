@@ -240,21 +240,41 @@ android {
 
     if (cdvReleaseSigningPropertiesFile) {
         signingConfigs {
+            debug {
+                def pFile = file("../release-signing.properties")
+                Properties p = new Properties()
+
+                pFile.withInputStream { stream ->
+                    p.load(stream)
+                }
+                storeFile file("../gongrong.jks")
+                storePassword p.storePassword
+                keyAlias p.keyAlias
+                keyPassword p.keyPassword
+            }
             release {
-                // These must be set or Gradle will complain (even if they are overridden).
-                keyAlias = ""
-                keyPassword = "__unset" // And these must be set to non-empty in order to have the signing step added to the task graph.
-                storeFile = null
-                storePassword = "__unset"
+                def pFile = file("../release-signing.properties")
+                Properties p = new Properties()
+
+                pFile.withInputStream { stream ->
+                    p.load(stream)
+                }
+                storeFile file("../gongrong.jks")
+                storePassword p.storePassword
+                keyAlias p.keyAlias
+                keyPassword p.keyPassword
             }
         }
         buildTypes {
+            debug {
+                signingConfig signingConfigs.debug
+            }
             release {
                 signingConfig signingConfigs.release
             }
         }
 	
-	sourceSets {
+	    sourceSets {
             main {
                 jniLibs.srcDirs = ['libs']
             }
@@ -272,8 +292,6 @@ android {
  * if you are adding the dependencies manually, do so outside the comments, otherwise
  * the Cordova tools will overwrite them
  */
-
-
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
@@ -302,13 +320,21 @@ dependencies {
     compile 'com.orhanobut:logger:2.1.1'
     compile project(path: ':qrcode')
     compile files('libs/alipaySdk-20180316.jar')
-    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
+//    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
     compile files('libs/AMapSearch_6.1.0_AMapLocation_3.8.0_20180330.jar')
     compile files('libs/jcore-android-1.2.0.jar')
     compile files('libs/jpush-android-3.1.1.jar')
-    compile files('libs/jshare-android-1.5.0.jar')
-    compile files('libs/jshare-wechat-android-1.5.0.jar')
+//    compile files('libs/jshare-android-1.5.0.jar')
+//    compile files('libs/jshare-wechat-android-1.5.0.jar')
     compile files('libs/xUtils-2.6.14.jar')
+
+    // umeng share & login
+    compile 'com.umeng.sdk:common:latest.integration'
+    compile 'com.umeng.sdk:share-core:latest.integration'
+//    compile 'com.umeng.sdk:share-qq:latest.integration'
+    compile 'com.umeng.sdk:share-wechat:latest.integration'
+    compile 'com.umeng.sdk:share-sina:latest.integration'
+
     testCompile 'junit:junit:4.12'
 }
 
