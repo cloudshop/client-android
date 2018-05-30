@@ -45,13 +45,13 @@ public abstract class BaseFragment extends CordovaFragment {
      * <p/>
      * return 返回Fragment应该填充的View对象
      */
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-
-        View view = initView();
-        return view;
-    }
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//
+//        View view = initView();
+//        return view;
+//    }
 
     /**
      * Activity创建完成
