@@ -8,13 +8,14 @@ import android.webkit.WebView;
 
 import com.grjf365.gongrongpoints.javascriptInterface.MyJavascriptInterface;
 import com.webileapps.fragments.CordovaFragment;
+import com.grjf365.gongrongpoints.fragment.BaseFragment;
 
 
 /**
  * Created by yingmingbo on 2018/5/28.
  */
 
-public class MineFragment extends CordovaFragment {
+public class MineFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,4 +28,5 @@ public class MineFragment extends CordovaFragment {
 
         return view;
     }
+
 }

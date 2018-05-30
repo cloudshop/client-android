@@ -43,7 +43,7 @@ public class StartActivity extends BaseActivity  {
 		if (SharedPreferencesUtil.isFirst(activity)) {
 			intent = new Intent(activity,GuideActivity.class);
 		} else {
-			intent = new Intent(activity, com.newdun.assist.MainActivity.class);
+			intent = new Intent(activity, MainTabActivity.class);
 		}
 		this.startActivity(intent);
 		finish();

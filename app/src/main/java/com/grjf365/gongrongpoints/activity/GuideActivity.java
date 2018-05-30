@@ -39,10 +39,10 @@ public class GuideActivity extends BaseActivity  {
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 		//透明导航栏
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-		init();
+		initView();
 	}
 
-	private void init(){
+	private void initView(){
 		for(int i : guide_drawable){
 			RelativeLayout view = (RelativeLayout) View.inflate(activity,R.layout.item_guide,null);
 			ImageView imageView = view.findViewById(R.id.imgView);
@@ -94,7 +94,7 @@ public class GuideActivity extends BaseActivity  {
 
 	private void gotoMain(){
 		SharedPreferencesUtil.setFirst(activity,false);
-		startActivity(new Intent(activity,com.newdun.assist.MainActivity.class));
+		startActivity(new Intent(activity,MainTabActivity.class));
 		finish();
 	}
 }

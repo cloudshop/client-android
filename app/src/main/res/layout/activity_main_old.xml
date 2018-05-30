@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+      android:id="@+id/ll_main_foot"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:background="@android:color/transparent"
+      android:orientation="vertical">
+        <RadioGroup
+          android:id="@+id/rg_main_foot"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:background="#ffffff"
+          android:paddingBottom="5dp"
+          android:paddingTop="5dp" >
+
+            <RadioButton
+              android:id="@+id/rb_main_foot_home"
+              style="@style/rb_main_foot"
+              android:checked="true"
+              android:drawableTop="@drawable/tab_main_home_selector"
+              android:text="首页" />
+
+            <RadioButton
+              android:id="@+id/rb_main_foot_classify"
+              style="@style/rb_main_foot"
+              android:drawableTop="@drawable/tab_main_classify_selector"
+              android:text="分类" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/rb_main_foot_gongrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/gongrong"/>
+            </RelativeLayout>
+
+            <RadioButton
+              style="@style/rb_main_foot"
+              android:drawableTop="@mipmap/gongrong"
+                android:visibility="gone"
+              android:text="" />
+
+            <RadioButton
+              android:id="@+id/rb_main_foot_shopping"
+              style="@style/rb_main_foot"
+              android:drawableTop="@drawable/tab_main_shopping_cart_selector"
+              android:text="购物车" />
+
+            <RadioButton
+              android:id="@+id/rb_main_foot_my"
+              style="@style/rb_main_foot"
+              android:drawableTop="@drawable/tab_main_my_selector"
+              android:text="我的" />
+        </RadioGroup>
+    </LinearLayout>
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@id/ll_main_foot">
+        <com.grjf365.gongrongpoints.view.HomeViewPager
+          android:id="@+id/vp_home"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          />
+        <ImageView
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_alignParentBottom="true"
+          android:background="@color/gray_line_color"/>
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

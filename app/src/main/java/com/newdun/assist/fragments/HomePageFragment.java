@@ -9,12 +9,13 @@ import android.webkit.WebView;
 import com.grjf365.gongrongpoints.R;
 import com.grjf365.gongrongpoints.javascriptInterface.MyJavascriptInterface;
 import com.webileapps.fragments.CordovaFragment;
+import com.grjf365.gongrongpoints.fragment.BaseFragment;
 
 
 /**
  * Created by yingmingbo on 2018/5/28.
  */
-public class HomePageFragment extends CordovaFragment {
+public class HomePageFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         launchUrl = "file:///android_asset/www/static/homepage/index.html";

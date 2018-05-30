@@ -34,16 +34,8 @@ public class Application extends android.app.Application {
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         PlatformConfig.setAlipay("2015111700822536");
 
-    }
-
-    @Override
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-
-
         JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
-//        JPushInterface.init(this);     		// 初始化 JPush
+        JPushInterface.init(this);     		// 初始化 JPush
 //        PlatformConfig platformConfig = new PlatformConfig()
 //                .setWechat("wxf177c6755716fa32", "dcad950cd0633a27e353477c4ec12e7a");
         /**
@@ -52,6 +44,12 @@ public class Application extends android.app.Application {
         //*
 //        JShareInterface.init(this, platformConfig);
         initLogger();
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 
     private void initLogger(){

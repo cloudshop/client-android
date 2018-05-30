@@ -6,13 +6,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import org.apache.cordova.CordovaActivity;
+
 public class BaseActivity extends AppCompatActivity {
 
     protected Activity activity;
     private ProgressDialog pdDialog;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.activity = this;
     }
