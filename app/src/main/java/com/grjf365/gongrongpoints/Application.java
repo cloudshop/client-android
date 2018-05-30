@@ -25,6 +25,7 @@ public class Application extends android.app.Application {
         super.onCreate();
 
         // 友盟初始化
+        UMConfigure.setLogEnabled(true);
         UMConfigure.init(this, "5b0e2b608f4a9d435c0001c9"
                 , "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
 
