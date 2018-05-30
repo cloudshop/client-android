@@ -46,6 +46,10 @@ import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
 import com.newdun.assist.MainActivity;
+import com.umeng.socialize.UMAuthListener;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.Date;
@@ -85,7 +89,18 @@ public class MyJavascriptInterface {
         public void handleMessage(Message msg) {
             ResultBean resultBean = (ResultBean) msg.obj;
             switch (resultBean.type){
-                case Constant.FUNC_LOGIN:
+                case Constant.FUNC_THIRD_LOGIN:
+                    switch (resultBean.param) {
+                        case "wechat":
+                            UMShareAPI.get(context).getPlatformInfo((Activity)context, SHARE_MEDIA.WEIXIN, umAuthListener);
+                            break;
+                        case "alipay":
+                            UMShareAPI.get(context).getPlatformInfo((Activity)context, SHARE_MEDIA.ALIPAY, umAuthListener);
+                            break;
+                        case "qq":
+                            UMShareAPI.get(context).getPlatformInfo((Activity)context, SHARE_MEDIA.QQ, umAuthListener);
+                            break;
+                    }
                     break;
                 case Constant.FUNC_OPEN_URL:
                     String openUrl = resultBean.result;
@@ -211,6 +226,13 @@ public class MyJavascriptInterface {
             }
             String type = contentObj.getString("func");
             switch (type){
+                case Constant.FUNC_THIRD_LOGIN:
+                    String loginType = paramObj.getString("login_type");
+                    ResultBean result = new ResultBean();
+                    result.type = type;
+                    result.param = loginType;
+                    sendResultMessage(result);
+                    break;
                 case Constant.FUNC_PAY:
                     String payType = paramObj.getString("payType");
                     String orderStr = paramObj.getString("orderStr");
@@ -599,4 +621,30 @@ public class MyJavascriptInterface {
         //异步查询
         geocodeSearch.getFromLocationNameAsyn(query);
     }
+
+    static private UMAuthListener umAuthListener = new UMAuthListener() {
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+            //授权开始的回调
+            Logger.d("Authorize began");
+        }
+        @Override
+        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+//            Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+            Logger.d("Authorize succeed");
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+//            Toast.makeText( getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+            Logger.d("Authorize fail");
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform, int action) {
+//            Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+            Logger.d("Authorize cancel");
+        }
+    };
+
 }

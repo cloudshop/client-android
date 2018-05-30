@@ -8,6 +8,7 @@ public class ResultBean {
     public int status;
     public String result;
     public String type;
+    public String param;
     public Object resultObject;
     public boolean isShowClose;
     public boolean isRefresh;

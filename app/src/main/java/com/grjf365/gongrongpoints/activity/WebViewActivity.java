@@ -62,6 +62,7 @@ import com.grjf365.gongrongpoints.config.Constant;
 import com.grjf365.gongrongpoints.javascriptInterface.MyJavascriptInterface;
 import com.grjf365.gongrongpoints.utils.StringUtil;
 import com.orhanobut.logger.Logger;
+import com.umeng.socialize.UMShareAPI;
 
 import org.apache.cordova.CordovaActivity;
 
@@ -85,6 +86,7 @@ public class WebViewActivity extends CordovaActivity  {
 	private ValueCallback<Uri> uploadMessage;
 	private ValueCallback<Uri[]> uploadMessageAboveL;
 	private final static int FILE_CHOOSER_RESULT_CODE = 10000;
+	private final static int RESULT_THIRD_LOGIN = 10001;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -384,31 +386,45 @@ public class WebViewActivity extends CordovaActivity  {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if(requestCode == 2000 && resultCode == RESULT_OK){
-			boolean refreshParent = data.getBooleanExtra("refreshParent",false);
-			if(refreshParent){
-				if(webView != null){
-					webView.reload();
+		switch (requestCode) {
+			case 2000:
+				if (resultCode == RESULT_OK) {
+					boolean refreshParent = data.getBooleanExtra("refreshParent", false);
+					if (refreshParent) {
+						if (webView != null) {
+							webView.reload();
+						}
+					}
 				}
-			}
-		}else if( requestCode == 1000 && resultCode == RESULT_OK){
-			//扫描二维码成功
-			String content = data.getStringExtra("codedContent");
-			if(!TextUtils.isEmpty(content)){
-				if(content.contains("grpay") && content.startsWith("http")){
-					Intent openUrlIntent = new Intent(this, WebViewActivity.class);
-					openUrlIntent.putExtra("showClose",false);
-					openUrlIntent.putExtra("url",content);
-					startActivity(openUrlIntent);
-				}else if(content.startsWith("http")){
-					Intent openUrlIntent = new Intent(this, WebViewActivity.class);
-					openUrlIntent.putExtra("showClose",true);
-					openUrlIntent.putExtra("url",content);
-					startActivity(openUrlIntent);
+				break;
+			case 1000:
+				if (resultCode == RESULT_OK) {
+					//扫描二维码成功
+					String content = data.getStringExtra("codedContent");
+					if (!TextUtils.isEmpty(content)) {
+						if (content.contains("grpay") && content.startsWith("http")) {
+							Intent openUrlIntent = new Intent(this, WebViewActivity.class);
+							openUrlIntent.putExtra("showClose", false);
+							openUrlIntent.putExtra("url", content);
+							startActivity(openUrlIntent);
+						} else if (content.startsWith("http")) {
+							Intent openUrlIntent = new Intent(this, WebViewActivity.class);
+							openUrlIntent.putExtra("showClose", true);
+							openUrlIntent.putExtra("url", content);
+							startActivity(openUrlIntent);
+						}
+					}
 				}
-			}
-		}else {
-			if (requestCode == FILE_CHOOSER_RESULT_CODE) {
+				break;
+			case RESULT_THIRD_LOGIN:
+				UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+				if (resultCode == RESULT_OK) {
+
+					String content = data.getStringExtra("codedContent");
+
+				}
+				break;
+			case FILE_CHOOSER_RESULT_CODE:
 				if (null == uploadMessage && null == uploadMessageAboveL) return;
 				Uri result = data == null || resultCode != RESULT_OK ? null : data.getData();
 				if (uploadMessageAboveL != null) {
@@ -417,7 +433,7 @@ public class WebViewActivity extends CordovaActivity  {
 					uploadMessage.onReceiveValue(result);
 					uploadMessage = null;
 				}
-			}
+				break;
 		}
 	}
 	private void openImageChooserActivity() {

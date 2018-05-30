@@ -30,6 +30,7 @@ public class Constant {
 
     public static final String FUNC_PAY = "pay";
     public static final String FUNC_LOGIN = "login";
+    public static final String FUNC_THIRD_LOGIN = "third_login";
     public static final String FUNC_OPEN_URL = "openURL";
     public static final String FUNC_CLOSE_CURRENT = "closeCurrent";
     public static final String FUNC_SCAN = "scan";

@@ -333,7 +333,8 @@ dependencies {
     compile group: 'com.umeng.sdk', name: 'common', version: '1.5.1'
     compile group: 'com.umeng.sdk', name: 'debug', version: '1.0.0'
     compile group: 'com.umeng.sdk', name: 'share-core', version: '6.9.0'
-//    compile 'com.umeng.sdk:share-qq:latest.integration'
+//    compile group: 'com.umeng.sdk', name: 'share-qq', version: '6.9.0'
+//    compile group: 'com.umeng.sdk', name: 'share-alipay', version: '6.9.0'
     compile group: 'com.umeng.sdk', name: 'share-wechat', version: '6.9.0'
     compile group: 'com.umeng.sdk', name: 'share-sina', version: '6.9.0'
 
