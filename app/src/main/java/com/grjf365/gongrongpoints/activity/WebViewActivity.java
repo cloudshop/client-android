@@ -16,27 +16,18 @@
        specific language governing permissions and limitations
        under the License.
  */
-
 package com.grjf365.gongrongpoints.activity;
 
-
 import android.annotation.TargetApi;
-import android.app.AlertDialog;
 import android.content.ClipData;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
-import android.webkit.CookieManager;
-import android.webkit.CookieSyncManager;
-import android.webkit.JsPromptResult;
-import android.webkit.JsResult;
+import android.view.Gravity;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
@@ -44,8 +35,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -56,12 +46,10 @@ import com.amap.api.services.geocoder.GeocodeResult;
 import com.amap.api.services.geocoder.GeocodeSearch;
 import com.amap.api.services.geocoder.RegeocodeResult;
 import com.google.gson.Gson;
-import com.grjf365.gongrongpoints.BaseActivity;
 import com.grjf365.gongrongpoints.R;
 import com.grjf365.gongrongpoints.config.Constant;
 import com.grjf365.gongrongpoints.javascriptInterface.MyJavascriptInterface;
 import com.grjf365.gongrongpoints.utils.StringUtil;
-import com.orhanobut.logger.Logger;
 import com.umeng.socialize.UMShareAPI;
 
 import org.apache.cordova.CordovaActivity;
@@ -69,16 +57,13 @@ import org.apache.cordova.CordovaActivity;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import cn.jpush.android.api.JPushInterface;
 
 
 public class WebViewActivity extends CordovaActivity  {
 	WebView webView;
 
-//	@BindView(R.id.progressBar)
-//	ProgressBar progressBar;
+	ProgressBar progressBar;
 	private String param;
 	private String url;
 	private boolean showClose;
@@ -110,8 +95,21 @@ public class WebViewActivity extends CordovaActivity  {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.addJavascriptInterface(new MyJavascriptInterface(this),"androidObject");
 
-        // Set by <content src="index.html" /> in config.xml
-        loadUrl(launchUrl);
+		FrameLayout.LayoutParams params = new FrameLayout.LayoutParams
+				(FrameLayout.LayoutParams.MATCH_PARENT, 3);
+		//设置顶部,左边布局
+		params.gravity = Gravity.TOP;
+		ProgressBar progressBar = new ProgressBar(this,
+				null,
+				android.R.attr.progressBarStyleHorizontal);
+		progressBar.setId(R.id.progressBar);
+		progressBar.setProgressDrawable(getDrawable(R.drawable.progress_bg));
+		progressBar.setVisibility(View.GONE);
+		//添加控件
+		addContentView(progressBar, params);
+
+		// Set by <content src="index.html" /> in config.xml
+		loadUrl(launchUrl);
     }
 
 	private String initURL(String url){
@@ -223,10 +221,10 @@ public class WebViewActivity extends CordovaActivity  {
 			public void onProgressChanged(WebView view, int newProgress) {
 				super.onProgressChanged(view, newProgress);
 				if(newProgress == 100){
-//					progressBar.setVisibility(View.GONE);
+					progressBar.setVisibility(View.GONE);
 				}else {
-//					progressBar.setVisibility(View.VISIBLE);
-//					progressBar.setProgress(newProgress);
+					progressBar.setVisibility(View.VISIBLE);
+					progressBar.setProgress(newProgress);
 				}
 			}
 
@@ -421,6 +419,7 @@ public class WebViewActivity extends CordovaActivity  {
 				if (resultCode == RESULT_OK) {
 
 					String content = data.getStringExtra("codedContent");
+
 
 				}
 				break;

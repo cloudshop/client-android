@@ -90,32 +90,16 @@ public class MainTabActivity extends BaseActivity {
 		getUpdateInfo();
 	}
 
-	public static Fragment newInstance(int position, Class<?> c) {
-
-		Bundle args = new Bundle();
-		args.putInt("position",position);
-		Fragment fragment = null;
-		try {
-			fragment = (Fragment) c.newInstance();
-		} catch (InstantiationException e) {
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
-		fragment.setArguments(args);
-		return fragment;
-	}
-
 	private void initView(){
 		rgFoot = (RadioGroup) findViewById(R.id.rg_main_foot);
 		rgFoot.setOnCheckedChangeListener(onCheckedChangeListener);
 		vp_home = (HomeViewPager) findViewById(R.id.vp_home);
 		vp_home.setEnabled(false);
-		fragments.add(newInstance(0, HomePageFragment.class));
-		fragments.add(newInstance(1, ClassifyFragment.class));
-		fragments.add(newInstance(2, HomePageFragment.class));
-		fragments.add(newInstance(3, ShoppingCartFragment.class));
-		fragments.add(newInstance(4, MineFragment.class));
+		fragments.add(BaseFragment.newInstance(0, BaseFragment.class, "file:///android_asset/www/static/homepage/index.html"));
+		fragments.add(BaseFragment.newInstance(1, BaseFragment.class, "file:///android_asset/www/index.html#/Classify"));
+		fragments.add(BaseFragment.newInstance(2, BaseFragment.class, "file:///android_asset/www/static/homepage/index.html"));
+		fragments.add(BaseFragment.newInstance(3, BaseFragment.class, "file:///android_asset/www/index.html#/Shopping"));
+		fragments.add(BaseFragment.newInstance(4, BaseFragment.class, "file:///android_asset/www/index.html#/Mine"));
 		pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
 			@Override
 			public Fragment getItem(int position) {
@@ -255,7 +239,7 @@ public class MainTabActivity extends BaseActivity {
 //	}
 
 	public void callJs(String message){
-		((BaseFragment)getCurrentFragment()).callJs(message);
+//		((BaseFragment)getCurrentFragment()).callJs(message);
 	}
 
 	@Override

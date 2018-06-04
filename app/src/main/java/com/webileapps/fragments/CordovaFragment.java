@@ -126,7 +126,7 @@ public class CordovaFragment extends android.support.v4.app.Fragment {
         if(contentView == null){
             init();
         }
-        loadUrl(launchUrl);
+//        loadUrl(launchUrl);
         return contentView;
     }
 

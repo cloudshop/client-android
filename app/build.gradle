@@ -270,12 +270,13 @@ android {
                 signingConfig signingConfigs.debug
             }
             release {
+                minifyEnabled false
                 signingConfig signingConfigs.release
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             }
         }
 	
-	    sourceSets {
+	sourceSets {
             main {
                 jniLibs.srcDirs = ['libs']
             }

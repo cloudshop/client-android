@@ -8,14 +8,13 @@ import android.webkit.WebView;
 
 import com.grjf365.gongrongpoints.javascriptInterface.MyJavascriptInterface;
 import com.webileapps.fragments.CordovaFragment;
-import com.grjf365.gongrongpoints.fragment.BaseFragment;
 
 
 /**
  * Created by yingmingbo on 2018/5/28.
  */
 
-public class ShoppingCartFragment extends BaseFragment {
+public class ShoppingCartFragment extends CordovaFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

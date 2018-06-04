@@ -25,7 +25,7 @@ public class Application extends android.app.Application {
         super.onCreate();
 
         // 友盟初始化
-        UMConfigure.setLogEnabled(true);
+        UMConfigure.setLogEnabled(false);
         UMConfigure.init(this, "5b0e2b608f4a9d435c0001c9"
                 , "umeng", UMConfigure.DEVICE_TYPE_PHONE, "");//58edcfeb310c93091c000be2 5965ee00734be40b580001a0
 
@@ -35,7 +35,7 @@ public class Application extends android.app.Application {
         PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
         PlatformConfig.setAlipay("2015111700822536");
 
-        JPushInterface.setDebugMode(true); 	// 设置开启日志,发布时请关闭日志
+        JPushInterface.setDebugMode(false); 	// 设置开启日志,发布时请关闭日志
         JPushInterface.init(this);     		// 初始化 JPush
 //        PlatformConfig platformConfig = new PlatformConfig()
 //                .setWechat("wxf177c6755716fa32", "dcad950cd0633a27e353477c4ec12e7a");
@@ -44,7 +44,7 @@ public class Application extends android.app.Application {
          **/
         //*
 //        JShareInterface.init(this, platformConfig);
-        initLogger();
+//        initLogger();
     }
 
     @Override
