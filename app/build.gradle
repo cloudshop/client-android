@@ -16,8 +16,14 @@
        specific language governing permissions and limitations
        under the License.
 */
+import java.text.SimpleDateFormat
 
 apply plugin: 'com.android.application'
+
+def releaseTime() {
+    def format = new SimpleDateFormat("yyyy-MM-dd");
+    return format.format(new Date())
+}
 
 buildscript {
     repositories {
@@ -270,9 +276,16 @@ android {
                 signingConfig signingConfigs.debug
             }
             release {
+                manifestPlaceholders = [PUSH_APPID: "mZU1Cgzdae6wOFd8XVPjf1"]
+                // 不显示Log
+                buildConfigField "boolean", "LOG_DEBUG", "false"
                 minifyEnabled false
-                signingConfig signingConfigs.release
+                zipAlignEnabled true
+                debuggable false
+                // 移除无用的resource文件
+                shrinkResources false
                 proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+                signingConfig signingConfigs.release
             }
         }
 	
