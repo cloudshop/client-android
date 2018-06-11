@@ -72,8 +72,8 @@
 			url: "http://app.grjf365.com:9080/user/api/mercuries/info-list/MercuryInfo",
 			async: true,
 			data: JSON.stringify({
-				"langitude": $('#langitude').val(),
-				"lantitude": $('#lantitude').val()
+				"langitude": "116.66847",
+				"lantitude": "39.88372"
 			}),
 			dataType: "json",
 			contentType: "application/json",
@@ -82,22 +82,27 @@
 				if(data.length>=1){
 					$.each(data,function(i,item){
 						template += '<li class="shopList flex spaceBetween" data="'+item.id+'" ><img class="listLf" src='+item['img_license']+' /><div class="flex1 flexNowrap listRig"><div class="flex spaceBetween listRig_name"><p class="listRig_name_title">'+item['name']+'</p></div><div class="listRig_mid"><p class="star fl"><span class="star-in fl" style="width:75%;"></span></p><span class="color67 font20">| &nbsp;&nbsp;123人光临</span></div><div class="flex spaceBetween color67 font20"><p class="flex1 overflow">'+item['city']+'</p><p>8.8km</p></div></div></li>';
-					})
-					var html = '',
-						dateStr = (new Date()).toLocaleString();
-	
-					for(var i = 0; i < count; i++) {
-						html += exports.renderTemplate(template, {
-						});
-	
+						console.log(template)
 						counterArr[counterIndex]++;
-					}
+					})
+					
+					// var html = '',
+					// 	dateStr = (new Date()).toLocaleString();
 	
-					var child = exports.parseHtml(html);
-					dom.appendChild(child);
+					// for(var i = 0; i < count; i++) {
+					// 	html += exports.renderTemplate(template, {
+					// 	});
+	
+					// 	counterArr[counterIndex]++;
+					// }
+	
+					// var child = exports.parseHtml(html);
+					dom.appendChild(template);
+					
 				}else{
 					
 				}
+				
 			},
 			error: function() {
 				console.log('暂无数据')

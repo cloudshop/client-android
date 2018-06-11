@@ -2,420 +2,542 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" , chrome=1 />
-    <meta charset="UTF-8">
-    <title>商城首页</title>
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="stylesheet" href="css/mui.min.css" />
-    <link rel="stylesheet" href="css/minirefresh.css" />
-    <link rel="stylesheet" href="css/style.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" , chrome=1 />
+  <meta charset="UTF-8">
+  <title>商城首页</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/mui.min.css" />
+  <link rel="stylesheet" href="css/minirefresh.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
+  <script type="text/javascript" src="js/IOSAndroid.js"></script>
+  <script type="text/javascript">
+  document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
 
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/TouchSlide.1.1.js"></script>
-    <SCript type="text/javascript" src="js/IOSAndroid.js"></SCript>
-    <script>
-        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
-    </script>
+  </script>
 </head>
 
 <body>
-    <div id="minirefresh" class="minirefresh-wrap">
-        <div class="minirefresh-scroll">
-            <!--banner start-->
-            <div class="banner">
-                <div id="focus" class="focus">
-                    <div class="hd">
-                        <ul></ul>
-                    </div>
-                    <div class="bd">
-                        <ul class="lis">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!--banner end-->
-
-            <!--头部定位 start-->
-            <div class="header flex spaceBetween">
-                <a href="javascript:;" class="loaction">北京市
+  <div id="minirefresh" class="minirefresh-wrap">
+    <div class="minirefresh-scroll">
+      <!--banner start-->
+      <div class="banner">
+        <div id="focus" class="focus">
+          <div class="hd">
+            <ul></ul>
+          </div>
+          <div class="bd">
+            <ul class="lis">
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--banner end-->
+      <!--头部定位 start-->
+      <div class="header flex spaceBetween">
+        <a href="javascript:;" class="loaction" id="loaction">北京市
                     <img class="arrowRight" src="images/city@2x.png" />
                 </a>
-                <input type="hidden" value="116.66847" id="langitude" />
-                <input type="hidden" value="39.88372" id="lantitude" />
-                <a href="JavaScript:;" class="searchBox flex1">
+        <input type="hidden" value="116.66847" id="langitude" />
+        <input type="hidden" value="39.88372" id="lantitude" />
+        <a href="JavaScript:;" class="searchBox flex1" id="searchBox">
                     <img class="headSearch" src="images/seek@2x.png" />
                     <span>请输入关键字</span>
                 </a>
-                <div class="headRight">
-                    <a class="look" style="margin-right:0.11rem;">
+        <div class="headRight">
+          <a class="look" id="look" style="margin-right:0.11rem;">
                         <img  src="images/scanning@2x.png" />
                     </a>
-                    <a class="look">
-                        <img src="images/inform@2x.png" />
-                    </a>
-                </div>
-            </div>
-            <!--头部定位 end-->
-
-            <!--菜单 start-->
-            <!--<div class="menu">-->
-            <!--    <ul class="clearFix">-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu1.png" />-->
-            <!--                <p>积分商城</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu2.png" />-->
-            <!--                <p>积分换购</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu3.png" />-->
-            <!--                <p>积分兑换</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu4.png" />-->
-            <!--                <p>积分竞购</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu5.png" />-->
-            <!--                <p>会员中心</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu6.png" />-->
-            <!--                <p>商家中心</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu7.png" />-->
-            <!--                <p>服务中心</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--        <li>-->
-            <!--            <a href="">-->
-            <!--                <img src="images/menu8.png" />-->
-            <!--                <p>交易中心</p>-->
-            <!--            </a>-->
-            <!--        </li>-->
-            <!--    </ul>-->
-            <!--</div>-->
-            <!--菜单 end-->
-
-            <!--更多 start-->
-            <!--<div class="moreBox">
-					<div class="more flex">
-						<div>
-							<span class="moreLf_one">贡融</span>
-							<span class="moreLf_two">快报</span>
-							<span class="moreLf_three">最新</span>
-						</div>
-						<p class="moreC flex1 overflow">快报快报快报快报快报快报快报快报快报快报</p>
-						<a class="moreRig" href="#">| &nbsp;&nbsp; 更多</a>
-					</div>
-				</div>-->
-            <!--更多 end-->
-
-            <!--附近商家 start-->
-            <p class="titleBox">附近商家</p>
-            <ul class="data-list" id="listdata"></ul>
-            <!--附近商家 end-->
+          <!--<a class="look">-->
+          <!--<img src="images/inform@2x.png" />-->
+          <!--</a>-->
         </div>
-        <div class="placeHolder"></div>
-
-        <!--footer start-->
+      </div>
+      <!--头部定位 end-->
+      <!--菜单 start-->
+      <!--<div class="menu">-->
+      <!--    <ul class="clearFix">-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu1.png" />-->
+      <!--                <p>积分商城</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu2.png" />-->
+      <!--                <p>积分换购</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu3.png" />-->
+      <!--                <p>积分兑换</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu4.png" />-->
+      <!--                <p>积分竞购</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu5.png" />-->
+      <!--                <p>会员中心</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu6.png" />-->
+      <!--                <p>商家中心</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu7.png" />-->
+      <!--                <p>服务中心</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--        <li>-->
+      <!--            <a href="">-->
+      <!--                <img src="images/menu8.png" />-->
+      <!--                <p>交易中心</p>-->
+      <!--            </a>-->
+      <!--        </li>-->
+      <!--    </ul>-->
+      <!--</div>-->
+      <!--菜单 end-->
+      <!--更多 start-->
+      <!--<div class="moreBox">
+                    <div class="more flex">
+                        <div>
+                            <span class="moreLf_one">贡融</span>
+                            <span class="moreLf_two">快报</span>
+                            <span class="moreLf_three">最新</span>
+                        </div>
+                        <p class="moreC flex1 overflow">快报快报快报快报快报快报快报快报快报快报</p>
+                        <a class="moreRig" href="#">| &nbsp;&nbsp; 更多</a>
+                    </div>
+                </div>-->
+      <!--更多 end-->
+      <!--附近商家 start-->
+      <p class="titleBox">附近商家</p>
+     
+      <!--数据列表-->
+      <ul class="data-list" id="listdata"></ul>
       
-        <!--footer end-->
+      <!--附近商家 end-->
     </div>
-    <script type="text/javascript" src="js/mui.min.js"></script>
-    <script type="text/javascript" src="js/minirefresh.js"></script>
-    <script type="text/javascript" src="js/style.js"></script>
-    <script>
-        var appendTestData = Common.appendTestData,
-            // 记录一个最新
-            maxDataSize = 30,
-            listDom = document.querySelector('#listdata'),
-            requestDelayTime = 600;
+    <div class="placeHolder"></div>
+    <!--footer start-->
+    <!--footer end-->
+  </div>
+  <script type="text/javascript" src="js/mui.min.js"></script>
+  <!-- <script type="text/javascript" src="js/minirefresh.js"></script>
+    <script type="text/javascript" src="js/style.js"></script>-->
+  <script>
+  mui.init({
+    pullRefresh: {
+      container: '#minirefresh',
+      down: {
+        style: 'circle',
 
-        var miniRefresh = new MiniRefresh({
-            container: '#minirefresh',
-            down: {
-                callback: function () {
-                    setTimeout(function () {
-                        // 每次下拉刷新后，上拉的状态会被自动重置
-                        appendTestData(listDom, 10, true);
-                        miniRefresh.endDownLoading(true);
-                    }, requestDelayTime);
-                }
-            },
-            up: {
-                isAuto: true,
-                callback: function () {
-                    setTimeout(function () {
-                        appendTestData(listDom, 10);
-                        miniRefresh.endUpLoading(listDom.children.length >= maxDataSize ? true : false);
-                    }, requestDelayTime);
-                }
-            }
-        });
-    </script>
-    <script type="text/javascript">
-        var arr;
-        window.brr = '123123123';
-        $(document).ready(function () {
-            $.ajax({
-                type: "GET",
-                url: "http://app.grjf365.com/api/advertising/api/findNotDelByLoc",
-                async: true,
-                dataType: "json",
-                contentType: "application/json",
-                success: function (data) {
-                    var bannerList = ''
-                    if (data.length >= 1) {
-                        // console.log(data)
-                        $.each(data, function (i, item) {
-                            // console.log(item.link)
-                            // var a = item.link;
-                            var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
-                            // console.log(reg.test(a));
-                            if (reg.test(a) == true) {
-                                arr = '外链' + this.link
-                            } else {
-                                arr = '内链' + this.link
-                            }
+        callback: pulldownRefresh
+      },
+      up: {
+        auto: false,
+        contentrefresh: '正在加载...',
+        contentnomore:"",
+        callback: pullupRefresh
+      }
+    }
+  });
 
-                            var a = '<li data="' + item.link + '"><img _src="' + item['image'] + '" /></li>'
+  var count = 10;
+  var dataSize = 0;
+ $.ajax({
+        type: 'POST',
+        url: "http://app.grjf365.com:9080/user/api/mercuries/info-list/MercuryInfo",
+        async: true,
+        data: JSON.stringify({
+          // "langitude": $('#langitude').val(),
+          //  "lantitude": $('#lantitude').val()
+          "langitude": "116.66847",
+          "lantitude": "39.88372"
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        success: function(data) {
 
-                            bannerList += a
+          dataSize = data.length;
+          var template = ''
+          if (data.length >= 1) {
+            $.each(data, function(i, item) {
+              var personCount = Math.trunc(Math.random() * 1000);
+              var startPercent = Math.trunc(Math.random() * 100);
+              template += `<li class="shopList flex spaceBetween" data="${item.id}" ><img class="listLf" src="${item['img_license']}" /><div class="flex1 flexNowrap listRig"><div class="flex spaceBetween listRig_name"><p class="listRig_name_title">${item.name}</p></div><div class="listRig_mid"><p class="star fl"><span class="star-in fl" style="width:${startPercent}%;"></span></p><span class="color67 font20">| &nbsp;&nbsp;${personCount}人光临</span></div><div class="flex spaceBetween color67 font20"><p class="flex1 overflow">${item.city}</p><p>${item.provice}km</p></div></div></li>`;
+            })
 
-                        });
-                        $('.bd ul').html(bannerList)
-                        // console.log()
-                        //轮播
-                        TouchSlide({
-                            slideCell: "#focus",
-                            titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-                            mainCell: ".bd ul",
-                            effect: "left",
-                            autoPlay: true, //自动播放
-                            autoPage: true, //自动分页
-                            switchLoad: "_src" //切换加载，真实图片路径为"_src" 
-                        });
-                    }
-                }
-            });
-        });
-        var list = document.getElementsByClassName('lis')
-        $(".bd").on("click", "li", function () {
-            console.log($(this).attr("data"))
-            var b = $(this).attr("data")
+            $("#listdata").append(template)
+          } else {
+
+          }
+
+        },
+        error: function() {
+          console.log('暂无数据')
+        }
+      });
+  function pullupRefresh() {
+    setTimeout(function() {
+      mui('#minirefresh').pullRefresh().endPullupToRefresh((count > dataSize)); //参数为true代表没有更多数据了。
+      $.ajax({
+        type: 'POST',
+        url: "http://app.grjf365.com:9080/user/api/mercuries/info-list/MercuryInfo",
+        async: true,
+        data: JSON.stringify({
+          // "langitude": $('#langitude').val(),
+          //  "lantitude": $('#lantitude').val()
+          "langitude": "116.66847",
+          "lantitude": "39.88372"
+        }),
+        dataType: "json",
+        contentType: "application/json",
+        success: function(data) {
+
+          dataSize = data.length;
+          var template = ''
+          if (data.length >= 1) {
+            $.each(data, function(i, item) {
+              var personCount = Math.trunc(Math.random() * 1000);
+              var startPercent = Math.trunc(Math.random() * 100);
+              template += `<li class="shopList flex spaceBetween" data="${item.id}" ><img class="listLf" src="${item['img_license']}" /><div class="flex1 flexNowrap listRig"><div class="flex spaceBetween listRig_name"><p class="listRig_name_title">${item.name}</p></div><div class="listRig_mid"><p class="star fl"><span class="star-in fl" style="width:${startPercent}%;"></span></p><span class="color67 font20">| &nbsp;&nbsp;${personCount}人光临</span></div><div class="flex spaceBetween color67 font20"><p class="flex1 overflow">${item.city}</p><p>${item.provice}km</p></div></div></li>`;
+            })
+
+            $("#listdata").push(template)
+          } else {
+
+          }
+
+        },
+        error: function() {
+          console.log('暂无数据')
+        }
+      });
+    }, 1500);
+  }
+
+  function addData() {
+
+    $.ajax({
+      type: 'POST',
+      url: "http://app.grjf365.com:9080/user/api/mercuries/info-list/MercuryInfo",
+      async: true,
+      data: JSON.stringify({
+        "langitude": "116.66847",
+        "lantitude": "39.88372"
+      }),
+      dataType: "json",
+      contentType: "application/json",
+      success: function(data) {
+        dataSize = data.length;
+        var template = ''
+        if (data.length >= 1) {
+          $.each(data, function(i, item) {
+            var personCount = Math.trunc(Math.random() * 1000);
+            var startPercent = Math.trunc(Math.random() * 100);
+            template += `<li class="shopList flex spaceBetween" data="${item.id}" ><img class="listLf" src="${item['img_license']}" /><div class="flex1 flexNowrap listRig"><div class="flex spaceBetween listRig_name"><p class="listRig_name_title">${item.name}</p></div><div class="listRig_mid"><p class="star fl"><span class="star-in fl" style="width:${startPercent}%;"></span></p><span class="color67 font20">| &nbsp;&nbsp;${personCount}人光临</span></div><div class="flex spaceBetween color67 font20"><p class="flex1 overflow">${item.city}</p><p>${item.provice}km</p></div></div></li>`;
+
+          })
+          $("#listdata").push(template)
+
+        } else {
+
+        }
+
+      },
+      error: function() {
+        console.log('暂无数据')
+      }
+
+    });
+  }
+  /**
+   * 下拉刷新具体业务实现
+   */
+  function pulldownRefresh() {
+    setTimeout(function() {
+      addData();
+      mui('#minirefresh').pullRefresh().endPulldownToRefresh();
+      mui.toast("为您找到更多商家");
+    }, 1500);
+  }
+
+  </script>
+  <script type="text/javascript">
+  var arr;
+  window.brr = '123123123';
+  $(document).ready(function() {
+
+    $.ajax({
+      type: "GET",
+      url: "http://app.grjf365.com/api/advertising/api/findNotDelByLoc",
+      async: true,
+      dataType: "json",
+      contentType: "application/json",
+      success: function(data) {
+        var bannerList = ''
+        if (data.length >= 1) {
+          // console.log(data)
+          $.each(data, function(i, item) {
+            // console.log(item.link)
+            // var a = item.link;
             var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
             // console.log(reg.test(a));
-            if (reg.test(b) == true) {
-                arr = '外链' + b;
-                var linkval = {
-                    func: "openURL",
-                    param: {
-                        URL: b,
-                        showClose: true
-                    }
-                };
-                IOSAndroid(linkval);
-
-
+            if (reg.test(a) == true) {
+              arr = '外链' + this.link
             } else {
-                arr = '内链' + b;
-                var index = b.indexOf("?")
-                var id = b.slice(index + 1, b.length);
-                var val = {
-                    func: "openURL",
-                    param: {
-                        URL: "/#/Product?ProductId=" + id
-                    }
-                };
-                console.log(val)
-                var u = navigator.userAgent;
-                var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-                var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-                if (isiOS) {
-                    window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-                } else if (isAndroid) {
-                    window.androidObject.JSCallAndroid(JSON.stringify(val));
-                }
+              arr = '内链' + this.link
             }
 
-        });
-        $('.data-list').on("click", "li", function () {
-            var id = $(this).attr("data")
-            console.log(id)
-            var val = {
-                func: "openURL",
-                param: {
-                    URL: "/#/PageDetails?id=" + id
-                }
-            };
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-            if (isiOS) {
-                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-            } else if (isAndroid) {
-                window.androidObject.JSCallAndroid(JSON.stringify(val));
-            }
+            var a = '<li data="' + item.link + '"><img _src="' + item['image'] + '" /></li>'
 
-        })
-        $(".look").click(function(){
-            var val = {
-                func: 'scan',
-                param: {}
-            };
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-            if (isiOS) {
-                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-            } else if (isAndroid) {
-                window.androidObject.JSCallAndroid(JSON.stringify(val));
-            }
-        })
-        $(".news").click(function(){
-            var val = {
-                func: "openURL",
-                param: {
-                    URL: "/#/news"
-                }
-            };
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-            if (isiOS) {
-                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-            } else if (isAndroid) {
-                window.androidObject.JSCallAndroid(JSON.stringify(val));
-            }
-        })
-        $('.searchBox').click(function(){
-            var val = {
-                func: "openURL",
-                param: {
-                    URL: "/#/search"
-                }
-            };
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-            if (isiOS) {
-                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-            } else if (isAndroid) {
-                window.androidObject.JSCallAndroid(JSON.stringify(val));
-            }
-        })
-        $('.loaction').click(function(){
-            var val = {
-                func: "openURL",
-                param: {
-                    URL: "/#/city"
-                }
-            };
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
-            if (isiOS) {
-                window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
-            } else if (isAndroid) {
-                window.androidObject.JSCallAndroid(JSON.stringify(val));
-            }
-        })
-    </script>
-    <script>
-        function GeographicalLocation(X, Y, Z) {
-                this.XX = X;
-                this.YY = Y;
-                $('.loaction').text(Z)
-                $.ajax({
-                    type: "POST",
-                    url: "http://app.grjf365.com/api/user/api/mercuries/info-list/MercuryInfo",
-                    async: true,
-                    dataType: "json",
-                    data: {
-                        langitude: 116.66847,
-                        lantitude: 39.88372
-                    },
-                    contentType: "application/json",
-                    success: function (data) {
-                        console.log(data)
-                    }
-                });
-            }
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                alert("浏览器不支持地理定位。");
-            }
-        }
+            bannerList += a
 
-        function showError(error) {
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    alert("定位失败,用户拒绝请求地理定位");
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    alert("定位失败,位置信息是不可用");
-                    break;
-                case error.TIMEOUT:
-                    alert("定位失败,请求获取用户位置超时");
-                    break;
-                case error.UNKNOWN_ERROR:
-                    alert("定位失败,定位系统失效");
-                    break;
-            }
+          });
+          $('.bd ul').html(bannerList)
+          // console.log()
+          //轮播
+          TouchSlide({
+            slideCell: "#focus",
+            titCell: ".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+            mainCell: ".bd ul",
+            effect: "left",
+            autoPlay: true, //自动播放
+            autoPage: true, //自动分页
+            switchLoad: "_src" //切换加载，真实图片路径为"_src" 
+          });
         }
+      }
+    });
 
-        function showPosition(position) {
-            var lat = position.coords.latitude; //纬度 
-            var lag = position.coords.longitude; //经度 
-            alert('纬度:' + lat + ',经度:' + lag);
+
+
+    var list = document.getElementsByClassName('lis')
+    mui(".bd").on("tap", "li", function() {
+      // console.log($(this).attr("data"))
+      var b = $(this).attr("data")
+      var reg = /(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&:/~\+#]*[\w\-\@?^=%&/~\+#])?/;
+      // console.log(reg.test(a));
+      if (reg.test(b) == true) {
+        arr = '外链' + b;
+        var linkval = {
+          func: "openURL",
+          param: {
+            URL: b,
+            showClose: true
+          }
+        };
+        IOSAndroid(linkval);
+
+
+      } else {
+        arr = '内链' + b;
+        var index = b.indexOf("?")
+        var id = b.slice(index + 1, b.length);
+        var val = {
+          func: "openURL",
+          param: {
+            URL: "/#/Product?ProductId=" + id
+          }
+        };
+        // console.log(val)
+        var u = navigator.userAgent;
+        var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+        var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+        if (isiOS) {
+          window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+        } else if (isAndroid) {
+          window.androidObject.JSCallAndroid(JSON.stringify(val));
         }
-        //			百度
-        function showPosition(position) {
-            var latlon = position.coords.latitude + ',' + position.coords.longitude;
-            //google 
-            var url = 'http://maps.google.cn/maps/api/geocode/json?latlng=' + latlon + '&language=CN';
-            $.ajax({
-                type: "GET",
-                url: url,
-                beforeSend: function () {
-                    $("#google_geo").html('正在定位...');
-                },
-                success: function (json) {
-                    if (json.status == 'OK') {
-                        var results = json.results;
-                        $.each(results, function (index, array) {
-                            if (index == 0) {
-                                $("#google_geo").html(array['formatted_address']);
-                            }
-                        });
-                    }
-                },
-                error: function (XMLHttpRequest, textStatus, errorThrown) {
-                    $("#google_geo").html(latlon + "地址位置获取失败");
-                }
-            });
+      }
+
+    });
+    mui('.data-list').on("tap", "li", function() {
+      var id = $(this).attr("data")
+      // console.log($('.data-list'))
+      // console.log(id)
+      var val = {
+        func: "openURL",
+        param: {
+          URL: "/#/PageDetails?id=" + id
         }
-    </script>
+      };
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+      try{
+      if (isiOS) {
+        window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+      } else if (isAndroid) {
+        window.androidObject.JSCallAndroid(JSON.stringify(val));
+      }}
+      catch(err){
+
+        window.location.href=(window.location.origin+"/#/PageDetails?id=" + id)
+        console.log('亲，浏览器不支持上面的的写法跳转，换个方式试试')
+      }
+
+    })
+    mui(".header").on("tap", "#look", function() {
+
+      var val = {
+        func: 'scan',
+        param: {}
+      };
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+      if (isiOS) {
+        window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+      } else if (isAndroid) {
+        window.androidObject.JSCallAndroid(JSON.stringify(val));
+      }
+    })
+    mui(".header").on("tap", "news", function() {
+      var val = {
+        func: "openURL",
+        param: {
+          URL: "/#/news"
+        }
+      };
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+      if (isiOS) {
+        window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+      } else if (isAndroid) {
+        window.androidObject.JSCallAndroid(JSON.stringify(val));
+      }
+    })
+    mui('.header').on("tap", '#searchBox', function() {
+      var val = {
+        func: "openURL",
+        param: {
+          URL: "/#/search"
+        }
+      };
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+      if (isiOS) {
+        window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+      } else if (isAndroid) {
+        window.androidObject.JSCallAndroid(JSON.stringify(val));
+      }
+    })
+    mui(".header").on("tap", "#loaction", function() {
+      var val = {
+        func: "openURL",
+        param: {
+          URL: "/#/city"
+        }
+      };
+      var u = navigator.userAgent;
+      var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; // android终端
+      var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); // ios终端
+      if (isiOS) {
+        window.webkit.messageHandlers.GongrongAppModel.postMessage(val);
+      } else if (isAndroid) {
+        window.androidObject.JSCallAndroid(JSON.stringify(val));
+      }
+    });
+  });
+
+  </script>
+  <script>
+  function GeographicalLocation(X, Y, Z) {
+    this.XX = X;
+    this.YY = Y;
+    $('.loaction').text(Z)
+    $.ajax({
+      type: "POST",
+      url: "http://app.grjf365.com/api/user/api/mercuries/info-list/MercuryInfo",
+      async: true,
+      dataType: "json",
+      data: {
+        langitude: 116.66847,
+        lantitude: 39.88372
+      },
+      contentType: "application/json",
+      success: function(data) {
+        // console.log(data)
+      }
+    });
+  }
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+      alert("浏览器不支持地理定位。");
+    }
+  }
+
+  function showError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        alert("定位失败,用户拒绝请求地理定位");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("定位失败,位置信息是不可用");
+        break;
+      case error.TIMEOUT:
+        alert("定位失败,请求获取用户位置超时");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("定位失败,定位系统失效");
+        break;
+    }
+  }
+
+  function showPosition(position) {
+    var lat = position.coords.latitude; //纬度 
+    var lag = position.coords.longitude; //经度 
+    alert('纬度:' + lat + ',经度:' + lag);
+  }
+  //          百度
+  function showPosition(position) {
+    var latlon = position.coords.latitude + ',' + position.coords.longitude;
+    //google 
+    var url = 'http://maps.google.cn/maps/api/geocode/json?latlng=' + latlon + '&language=CN';
+    $.ajax({
+      type: "GET",
+      url: url,
+      beforeSend: function() {
+        $("#google_geo").html('正在定位...');
+      },
+      success: function(json) {
+        if (json.status == 'OK') {
+          var results = json.results;
+          $.each(results, function(index, array) {
+            if (index == 0) {
+              $("#google_geo").html(array['formatted_address']);
+            }
+          });
+        }
+      },
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        $("#google_geo").html(latlon + "地址位置获取失败");
+      }
+    });
+  }
+
+  </script>
 </body>
 
 </html>

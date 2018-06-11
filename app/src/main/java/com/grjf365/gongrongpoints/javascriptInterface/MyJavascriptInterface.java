@@ -29,6 +29,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.grjf365.gongrongpoints.BaseActivity;
+import com.grjf365.gongrongpoints.activity.MainTabActivity;
 import com.grjf365.gongrongpoints.activity.WebViewActivity;
 import com.grjf365.gongrongpoints.bean.PayResult;
 import com.grjf365.gongrongpoints.bean.PayWXResultBean;
@@ -45,7 +46,6 @@ import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-import com.newdun.assist.MainActivity;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -117,12 +117,12 @@ public class MyJavascriptInterface {
 //                    boolean isHome = Boolean.parseBoolean(resultBean.result);
                     boolean isRefresh = resultBean.isRefresh;
                     if(isRefresh){
-                        Intent intentHome = new Intent(context, MainActivity.class);
+                        Intent intentHome = new Intent(context, MainTabActivity.class);
                         intentHome.putExtra("isRefresh",isRefresh);
                         intentHome.putExtra("finallyIndex",resultBean.finallyIndex);
                         context.startActivity(intentHome);
                     }else if(resultBean.finallyIndex != 0){
-                        Intent intentHome = new Intent(context, MainActivity.class);
+                        Intent intentHome = new Intent(context, MainTabActivity.class);
                         intentHome.putExtra("isRefresh",isRefresh);
                         intentHome.putExtra("finallyIndex",resultBean.finallyIndex);
                         context.startActivity(intentHome);
@@ -130,7 +130,7 @@ public class MyJavascriptInterface {
                         Intent intentParent = new Intent();
                         intentParent.putExtra("refreshParent",resultBean.refreshParent);
                         ((Activity)context).setResult(2000,intentParent);
-                        if(!( context instanceof MainActivity)){
+                        if(!( context instanceof MainTabActivity)){
                             ((Activity)context).finish();
                         }
                     }

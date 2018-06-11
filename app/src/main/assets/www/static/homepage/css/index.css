@@ -113,7 +113,7 @@ html{
 	display: inline-block;
 	font-size:0.24rem;
 	color: #fff;
-	width: 1.33rem;
+	flex: 1.5rem 0 0;
 	height: .6rem;
 	text-align: center;
 	line-height: 0.6rem;
@@ -139,7 +139,7 @@ html{
 	-webkit-border-radius: 0.6rem;
 	-moz-border-radius: 0.6rem;
 	margin:0 0.2rem;
-	font-size: 0.28rem;
+	font-size: 0.24rem;
 }
 .searchBox span{
 	color: #fff;
@@ -147,7 +147,7 @@ html{
 .headSearch{
 	display: inline-block;
 	vertical-align: sub;
-    margin-left: 0.12rem;
+    margin-left: 0.2rem;
     width: 0.3rem;
     height: auto;
 }

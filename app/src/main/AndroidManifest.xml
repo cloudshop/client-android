@@ -13,8 +13,8 @@
         android:smallScreens="true"
         android:xlargeScreens="true" />
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="27" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="16" />
     <!-- Required -->
     <permission
         android:name="com.grjf365.gongrongpoints.permission.JPUSH_MESSAGE"
